@@ -59,6 +59,12 @@ class RoscoOpenstackConfiguration {
     Boolean insecure
     String username
     String password
+    /*
+     * Configures the pause_before setting in Packer provisioners. The default of 30s is too short in some
+     * Openstack environments, i.e. devstack.
+     * See https://www.packer.io/docs/templates/provisioners.html
+     */
+    String pauseBefore
     List<OpenstackOperatingSystemVirtualizationSettings> baseImages = []
   }
 

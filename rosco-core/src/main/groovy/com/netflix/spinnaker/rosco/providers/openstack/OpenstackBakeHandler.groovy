@@ -125,6 +125,10 @@ public class OpenstackBakeHandler extends CloudProviderBakeHandler {
       parameterMap.openstack_project_name = openstackBakeryDefaults.projectName
     }
 
+    if (openstackBakeryDefaults.pauseBefore) {
+      parameterMap.pause_before = openstackBakeryDefaults.pauseBefore
+    }
+
     if (bakeRequest.build_info_url) {
       parameterMap.build_info_url = bakeRequest.build_info_url
     }

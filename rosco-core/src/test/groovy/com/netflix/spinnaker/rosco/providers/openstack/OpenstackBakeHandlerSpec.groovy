@@ -57,6 +57,7 @@ class OpenstackBakeHandlerSpec extends Specification implements TestDefaults {
       floatingIpPool: 'ippool',
       securityGroups: 'default',
       projectName: 'project1',
+      pauseBefore: '60s',
       templateFile: "openstack_template.json",
       baseImages: [
         [
@@ -275,7 +276,8 @@ class OpenstackBakeHandlerSpec extends Specification implements TestDefaults {
         repository: DEBIAN_REPOSITORY,
         package_type: DEB_PACKAGE_TYPE.packageType,
         packages: PACKAGES_NAME,
-        configDir: configDir
+        configDir: configDir,
+        pause_before: openstackBakeryDefaults.pauseBefore
       ]
 
       @Subject
@@ -332,7 +334,8 @@ class OpenstackBakeHandlerSpec extends Specification implements TestDefaults {
             configDir: configDir,
             appversion: appVersionStr,
             build_host: buildHost,
-            build_info_url: buildInfoUrl
+            build_info_url: buildInfoUrl,
+            pause_before: openstackBakeryDefaults.pauseBefore
     ]
 
     @Subject
@@ -382,7 +385,8 @@ class OpenstackBakeHandlerSpec extends Specification implements TestDefaults {
         repository: DEBIAN_REPOSITORY,
         package_type: DEB_PACKAGE_TYPE.packageType,
         packages: PACKAGES_NAME,
-        configDir: configDir
+        configDir: configDir,
+        pause_before: openstackBakeryDefaults.pauseBefore
       ]
 
       @Subject
@@ -433,7 +437,8 @@ class OpenstackBakeHandlerSpec extends Specification implements TestDefaults {
         repository: DEBIAN_REPOSITORY,
         package_type: DEB_PACKAGE_TYPE.packageType,
         packages: PACKAGES_NAME,
-        configDir: configDir
+        configDir: configDir,
+        pause_before: openstackBakeryDefaults.pauseBefore
       ]
 
       @Subject
@@ -485,7 +490,8 @@ class OpenstackBakeHandlerSpec extends Specification implements TestDefaults {
         packages: PACKAGES_NAME,
         configDir: configDir,
         someAttr1: "someValue1",
-        someAttr2: "someValue2"
+        someAttr2: "someValue2",
+        pause_before: openstackBakeryDefaults.pauseBefore
       ]
 
       @Subject
@@ -535,7 +541,8 @@ class OpenstackBakeHandlerSpec extends Specification implements TestDefaults {
         repository: DEBIAN_REPOSITORY,
         package_type: DEB_PACKAGE_TYPE.packageType,
         packages: PACKAGES_NAME,
-        configDir: configDir
+        configDir: configDir,
+        pause_before: openstackBakeryDefaults.pauseBefore
       ]
 
       @Subject
@@ -586,7 +593,8 @@ class OpenstackBakeHandlerSpec extends Specification implements TestDefaults {
         package_type: DEB_PACKAGE_TYPE.packageType,
         packages: PACKAGES_NAME,
         configDir: configDir,
-        upgrade: true
+        upgrade: true,
+        pause_before: openstackBakeryDefaults.pauseBefore
       ]
 
       @Subject

@@ -21,7 +21,8 @@
     "package_type": "",
     "packages": "",
     "upgrade": "",
-    "configDir": null
+    "configDir": null,
+    "pause_before": "30s"
   },
   "builders": [
     {
@@ -53,7 +54,7 @@
         "packages={{user `packages`}}",
         "upgrade={{user `upgrade`}}"
       ],
-      "pause_before": "30s"
+      "pause_before": "{{user `pause_before`}}"
     }
   ]
 }

@@ -247,6 +247,7 @@ openstack:
     username: ${OS_USERNAME}
     password: ${OS_PASSWORD}
     templateFile: openstack.json
+    pauseBefore: 30s
     baseImages:
     # sourceImageId is the unique UUID of an openstack image in a region, and can be found via horizon or the image api.
     # It is immutable for the life of the image.
